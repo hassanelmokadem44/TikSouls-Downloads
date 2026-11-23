@@ -1,0 +1,22 @@
+:root{color-scheme:dark;--base:#100e1a;--panel:#1c1729;--border:#403455;--ink:#f7f2ff;--muted:#c8b9da;--accent:#c2a5ff;font:16px/1.5 "Trebuchet MS",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#30204b,transparent 55%),var(--base);color:var(--ink)}
+[hidden]{display:none!important}a{color:inherit}h1,h2,h3,h4,p{margin:0}p{color:var(--muted)}
+.masthead,main,footer{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}.brand{display:flex;align-items:center;gap:9px;font-size:1.3rem;text-decoration:none;font-weight:800}.brand img{border-radius:9px;width:32px;height:32px}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--muted);font-size:.9rem;text-decoration:none}
+.hero{min-height:360px;display:grid;align-items:center;border:1px solid #65518a;border-radius:22px;padding:clamp(24px,5vw,65px);background:linear-gradient(90deg,#181224 5%,#181224ed 45%,#18122466 100%),url("./studio-night.webp") right center/cover}
+.hero h1{max-width:19ch;font-size:clamp(2.4rem,6.8vw,5rem);line-height:1.02;letter-spacing:-.07em}.hero p{max-width:48ch;margin:16px 0 24px}
+button,input,select{font:inherit;color:inherit}button,.button{border:1px solid #756294;border-radius:9px;background:#292138;color:var(--ink);padding:9px 15px;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;cursor:pointer}
+.primary{background:#c3aaff;border-color:#d6c3ff;color:#1c1331;font-weight:800}button:disabled{opacity:.55;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #98eee8;outline-offset:3px}
+.demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,410px);gap:28px;padding:clamp(16px,3vw,32px);margin-top:30px;border:1px solid var(--border);border-radius:18px;background:var(--panel);align-items:start}
+.controls h2,.windows h2{font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.035em}.controls h2+p{margin:8px 0 20px}.field{display:grid;gap:6px;font-weight:700;margin-bottom:8px}
+input:not([type=checkbox]),select{border:1px solid #64537f;border-radius:8px;background:#14101f;padding:8px 10px;min-width:0;width:100%}
+.check{display:flex;align-items:center;gap:8px;margin-top:14px}.hint{font-size:.9rem;margin:5px 0 14px}#chat{margin-top:24px}.guess-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px}#notice{min-height:1.5em;margin-top:8px;color:#a9f1ec}
+.board-wrap{min-width:0;container-type:inline-size}.board{--highlight:#e8c9ff;--glow:#502c78;--card:#33264b;isolation:isolate;position:relative;aspect-ratio:9/16;border-radius:4cqw;border:1px solid #a482cf;padding:5cqw;background:radial-gradient(ellipse at 90% 0%,var(--glow),transparent 59%),#151328;color:var(--ink)}
+.board::before{content:"";position:absolute;inset:0;z-index:-1;background:url("./tiksouls.png") center 92%/30% auto no-repeat;opacity:.13}
+.board[data-theme=aurora]{--highlight:#affff3;--glow:#176b67;--card:#1d3c45}.board[data-theme=gold]{--highlight:#ffe8ab;--glow:#79542f;--card:#483149}
+.board header{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff45;padding-bottom:2cqw}.board h3{font-size:7cqw}.board header span{font-size:3.6cqw;color:var(--muted)}
+.clock{margin-top:3cqw;font-weight:800;font-size:6cqw;color:var(--highlight)}progress{width:100%;height:1.5cqw;accent-color:var(--highlight);display:block}
+.word{font-weight:800;font-size:7cqw;padding:2cqw 0;color:var(--highlight)}.board ol{margin:0;padding-left:5cqw}.board ol li{background:var(--card);margin-bottom:1.25cqw;border-radius:1.5cqw;padding:1.5cqw 2cqw;font-size:3.9cqw}.board h4{margin-top:3cqw;margin-bottom:1cqw;font-size:4.6cqw}.scores strong{float:inline-end;color:var(--highlight)}
+.windows{margin-block:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--border);border-radius:18px;padding:24px;background:#1c1729}.windows p{max-width:60ch}.windows .button{white-space:nowrap}footer{color:var(--muted);padding-bottom:20px}
+@media(max-width:700px){.demo{grid-template-columns:minmax(0,1fr)}.board-wrap{width:min(100%,410px);margin-inline:auto}.windows{align-items:flex-start;flex-direction:column}.hero{min-height:300px}}

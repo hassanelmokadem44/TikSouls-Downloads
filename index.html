@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Try TikSouls’ Clue Clash game in your browser and download the Windows app.">
+<title>TikSouls · Try Clue Clash</title>
+<link rel="icon" href="./tiksouls.png">
+<link rel="stylesheet" href="./site.css">
+<script type="module" src="./demo.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="./" class="brand"><img src="./tiksouls.png" alt="">TikSouls</a>
+  <nav aria-label="Main"><a href="#demo">Try the demo</a><a href="#windows">Windows app</a></nav>
+</header>
+<main>
+  <section class="hero" aria-labelledby="headline">
+    <div>
+      <h1 id="headline">Give your LIVE chat a game to play.</h1>
+      <p>Try Clue Clash in your browser. Guess the word as clues appear, race the countdown, and see how the game looks on a portrait stream.</p>
+      <a class="primary button" href="#demo">Try Clue Clash</a>
+    </div>
+  </section>
+  <section class="demo" id="demo" aria-labelledby="demo-heading">
+    <div class="controls">
+      <h2 id="demo-heading">Play Clue Clash</h2>
+      <p>You have 60 seconds per round. Type a guess into the demo chat. The first correct answer earns 3 points and later correct answers earn 1 point.</p>
+      <label class="field">Board design
+        <select id="theme"><option value="amethyst">Amethyst Vault</option><option value="aurora">Aurora Glass</option><option value="gold">Gilded Archive</option></select>
+      </label>
+      <label class="check"><input type="checkbox" id="rose-mode"> Use simulated Rose clues</label>
+      <p class="hint">Rose mode starts with one clue. Simulate a Rose to reveal another.</p>
+      <button type="button" class="primary" id="start">Start demo</button>
+      <button type="button" id="rose" hidden disabled>Simulate a Rose</button>
+      <form id="chat">
+        <label class="field" for="guess">Demo chat</label>
+        <div class="guess-row"><input id="guess" maxlength="48" autocomplete="off" placeholder="Type your guess" disabled required><button disabled>Send guess</button></div>
+      </form>
+      <p id="notice" role="status"></p>
+    </div>
+    <section class="board-wrap" aria-label="Portrait game preview">
+      <div id="board" class="board" data-theme="amethyst">
+        <header><h3>Clue Clash</h3><span id="round">Practice</span></header>
+        <div class="clock" id="clock">60s</div>
+        <progress id="progress" max="60" value="60" aria-label="Time remaining"></progress>
+        <p class="word" id="word">Ready to play?</p>
+        <ol class="clues" id="clues"></ol>
+        <div id="leaderboard" hidden><h4>Leaderboard</h4><ol id="scores" class="scores"></ol></div>
+      </div>
+    </section>
+  </section>
+  <section id="windows" class="windows" aria-labelledby="windows-heading">
+    <div><h2 id="windows-heading">Take it LIVE on Windows</h2><p>TikSouls brings Clue Clash, Relay Rush, stream alerts, and overlays to TikTok LIVE Studio and OBS. This browser demo uses sample chat and gifts.</p></div>
+    <a class="button primary" href="https://github.com/hassanelmokadem44/TikSouls-Downloads/releases/latest">Download for Windows</a>
+  </section>
+</main>
+<footer>TikSouls</footer>
+</body>
+</html>
