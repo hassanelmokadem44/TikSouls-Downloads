@@ -20,3 +20,47 @@ input:not([type=checkbox]),select{border:1px solid #64537f;border-radius:8px;bac
 .word{font-weight:800;font-size:7cqw;padding:2cqw 0;color:var(--highlight)}.board ol{margin:0;padding-left:5cqw}.board ol li{background:var(--card);margin-bottom:1.25cqw;border-radius:1.5cqw;padding:1.5cqw 2cqw;font-size:3.9cqw}.board h4{margin-top:3cqw;margin-bottom:1cqw;font-size:4.6cqw}.scores strong{float:inline-end;color:var(--highlight)}
 .windows{margin-block:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--border);border-radius:18px;padding:24px;background:#1c1729}.windows p{max-width:60ch}.windows .button{white-space:nowrap}footer{color:var(--muted);padding-bottom:20px}
 @media(max-width:700px){.demo{grid-template-columns:minmax(0,1fr)}.board-wrap{width:min(100%,410px);margin-inline:auto}.windows{align-items:flex-start;flex-direction:column}.hero{min-height:300px}}
+
+.alert-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  margin: 32px 0;
+  padding: clamp(18px, 4vw, 48px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: linear-gradient(135deg, #21172e, #131724);
+}
+.alert-controls { display: grid; gap: 14px; }
+.alert-options { display: grid; gap: 8px; }
+.alert-options button {
+  justify-content: space-between;
+  gap: 12px;
+  text-align: start;
+  background: #201a31;
+}
+.alert-options button:hover { border-color: var(--accent); }
+.alert-options small { color: var(--muted); text-align: end; }
+.alert-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 290px);
+  aspect-ratio: 9 / 16;
+  margin-inline: auto;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid #76618e;
+  border-radius: 18px;
+  text-align: center;
+  background: linear-gradient(#13102366, #131023aa), url("./studio-night.webp") center / cover;
+}
+.alert-stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.alert-caption { position: absolute; inset: auto 10px 9%; padding: 12px 6px; border-radius: 12px; background: #150f23e8; }
+.alert-caption strong { display: block; font-size: 1.25rem; }
+.alert-idle { padding: 10px 14px; border-radius: 9px; background: #150f23e8; }
+.alert-status { min-height: 3em; }
+@media (max-width: 660px) {
+  .alert-demo { grid-template-columns: 1fr; }
+}

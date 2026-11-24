@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Try TikSouls’ Clue Clash game in your browser and download the Windows app.">
-<title>TikSouls · Try Clue Clash</title>
+<meta name="description" content="Try TikSouls’ Clue Clash game and interactive stream alerts in your browser and download the Windows app.">
+<title>TikSouls · Try the Studio</title>
 <link rel="icon" href="./tiksouls.png">
 <link rel="stylesheet" href="./site.css">
 <script type="module" src="./demo.js"></script>
+<script type="module" src="./alerts.js"></script>
 </head>
 <body>
 <header class="masthead">
   <a href="./" class="brand"><img src="./tiksouls.png" alt="">TikSouls</a>
-  <nav aria-label="Main"><a href="#demo">Try the demo</a><a href="#windows">Windows app</a></nav>
+  <nav aria-label="Main"><a href="#demo">Clue Clash</a><a href="#alerts">Alerts</a><a href="#windows">Windows app</a></nav>
 </header>
 <main>
   <section class="hero" aria-labelledby="headline">
@@ -20,6 +21,7 @@
       <h1 id="headline">Give your LIVE chat a game to play.</h1>
       <p>Try Clue Clash in your browser. Guess the word as clues appear, race the countdown, and see how the game looks on a portrait stream.</p>
       <a class="primary button" href="#demo">Try Clue Clash</a>
+      <a class="button" href="#alerts">Try stream alerts</a>
     </div>
   </section>
   <section class="demo" id="demo" aria-labelledby="demo-heading">
@@ -49,6 +51,26 @@
         <div id="leaderboard" hidden><h4>Leaderboard</h4><ol id="scores" class="scores"></ol></div>
       </div>
     </section>
+  </section>
+  <section class="alert-demo" id="alerts" aria-labelledby="alerts-heading">
+    <div class="alert-controls">
+      <h2 id="alerts-heading">Try stream alerts</h2>
+      <p>Simulate an event to play an alert on the portrait preview. Each rule uses the same sample clip so you can check its picture and sound together.</p>
+      <div class="alert-options" aria-label="Simulate an alert">
+        <button type="button" data-alert="rose"><strong>Send a Rose</strong><small>Specific gift</small></button>
+        <button type="button" data-alert="coins"><strong>Send 1,000 coins</strong><small>Coin threshold</small></button>
+        <button type="button" data-alert="entry"><strong>Join as @luna</strong><small>Specific viewer</small></button>
+      </div>
+      <label class="check"><input type="checkbox" id="alert-sound" checked> Play clip sound</label>
+      <p id="alert-status" class="alert-status" role="status">Choose an event to test playback.</p>
+    </div>
+    <div class="alert-stage" aria-label="Portrait alert preview">
+      <p class="alert-idle" id="alert-idle">Waiting for an event</p>
+      <video id="alert-video" src="./alert-preview.mp4" preload="metadata" playsinline aria-hidden="true" hidden></video>
+      <div class="alert-caption" id="alert-caption" hidden>
+        <strong id="alert-title"></strong><p id="alert-detail"></p>
+      </div>
+    </div>
   </section>
   <section id="windows" class="windows" aria-labelledby="windows-heading">
     <div><h2 id="windows-heading">Take it LIVE on Windows</h2><p>TikSouls brings Clue Clash, Relay Rush, stream alerts, and overlays to TikTok LIVE Studio and OBS. This browser demo uses sample chat and gifts.</p></div>
